@@ -1,4 +1,12 @@
 {
+  "portfolio":[
+    {
+      "id":0,
+      "name": "USD",
+      "amount": 10.25
+    }
+  ],
+
   "posts": [
     {
       "id": 1,
