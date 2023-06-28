@@ -1,34 +1,19 @@
 {
   "cash": {
-    "amount": 700
+    "amount": 1223
   },
   "portfolio": [
     {
       "id": 0,
       "name": "BTC",
-      "amount": 1.25
+      "amount": 1.25,
+      "price": 30000
     },
     {
       "id": 1,
       "name": "ETH",
-      "amount": 12
+      "amount": 12,
+      "price": 2000
     }
-  ],
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
