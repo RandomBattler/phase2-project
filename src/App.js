@@ -8,13 +8,7 @@ import Home from './Home';
 import Profile from "./profile";
 
 function App() {
-  const [portfolio, setPortfolio] = useState([]);
-
-  useEffect(() => {
-    fetch(" http://localhost:3001/portfolio")
-      .then((r) => r.json())
-      .then((s) => setPortfolio(s));
-  }, []);
+ 
 
   return (
     <>
@@ -28,7 +22,7 @@ function App() {
           Hello from About
         </Route>
         <Route path="/profile">
-          <Profile portfolio={portfolio} />
+          <Profile />
         </Route>
       </div>
     </>

@@ -1,9 +1,18 @@
 {
+  "cash":{
+    "amount": 0.00
+  }
+  ,
   "portfolio":[
     {
       "id":0,
-      "name": "USD",
-      "amount": 10.25
+      "name": "BTC",
+      "amount": 1.25
+    },
+    {
+      "id":1,
+      "name": "ETH",
+      "amount": 12
     }
   ],
 
