@@ -1,21 +1,19 @@
 {
-  "cash":{
-    "amount": 0.00
-  }
-  ,
-  "portfolio":[
+  "cash": {
+    "amount": 700
+  },
+  "portfolio": [
     {
-      "id":0,
+      "id": 0,
       "name": "BTC",
       "amount": 1.25
     },
     {
-      "id":1,
+      "id": 1,
       "name": "ETH",
       "amount": 12
     }
   ],
-
   "posts": [
     {
       "id": 1,

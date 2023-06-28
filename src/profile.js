@@ -19,23 +19,36 @@ function Profile() {
         .then((s) => setPortfolio(s));
     }, []);
 
+    function updateBalance(USD){
+            fetch(" http://localhost:3001/cash",{
+                method:'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(USD)
+            })
+              .then((r) => r.json())
+              .then((s) => setCash(s.amount));
+    }
+
     function handleSubmit(e) {
         e.preventDefault()
         const val = e.target.value.valueAsNumber;
+        const USD = {amount: 0};
        
         
         if(e.nativeEvent.submitter.id == "deposit"){
-            const USD = cash + val
+            USD.amount = cash + val
             
-            setCash(USD);
+            updateBalance(USD);
         }
         else{
             if (val > cash){
                 //add error message
                 return;
             }
-            const USD = cash - val
-            setCash(USD);
+            USD.amount = cash - val
+            updateBalance(USD);
         }
 
 
