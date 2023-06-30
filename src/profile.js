@@ -33,14 +33,12 @@ function Profile() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(parseFloat(e.target.value.value));
         const val = parseFloat(e.target.value.value);//e.target.value.valueAsNumber;
 
-        console.log(val);
         const USD = { amount: 0 };
 
 
-        if (e.nativeEvent.submitter.id == "deposit") {
+        if (e.nativeEvent.submitter.id === "deposit") {
             USD.amount = cash + val
 
             updateCash(USD);
@@ -53,6 +51,52 @@ function Profile() {
             USD.amount = cash - val
             updateCash(USD);
         }
+    }
+
+    function handleProtfolioChange(updatedCrypto){
+        const updatedProtfolio = portfolio.map((p) => {
+            if (p.id === updatedCrypto.id) {
+              return updatedCrypto;
+            } else {
+              return p;
+            }
+          });
+          setPortfolio(updatedProtfolio);
+    }
+
+    function onTransact(usd, crypto, buy){
+        let newAmount = 0;
+        const updatedCash = { amount: 0 };
+        if (buy){
+            if (cash < usd){
+                //error. Not enough cash
+                return;
+            }
+            updatedCash.amount = cash - usd;
+            newAmount = crypto.amount + (usd/crypto.price);
+        }
+        else {//sell
+            newAmount = crypto.amount - (usd/crypto.price);
+            if (newAmount < 0){
+                //error: not enough coin
+                return;
+            }
+            updatedCash.amount = cash + usd;
+        }
+            updateCash(updatedCash);
+            
+            fetch(`http://localhost:3001/portfolio/${crypto.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                amount: newAmount,
+            }),
+            })
+            .then((r) => r.json())
+            .then((updatedCrypto) => handleProtfolioChange(updatedCrypto));
+            
     }
 
     //update balance
@@ -70,7 +114,7 @@ function Profile() {
 
         </form>
 
-        <CryptoList portfolio={portfolio} />
+        <CryptoList portfolio={portfolio} onTransact={onTransact} />
        
 
     </div>;

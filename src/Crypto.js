@@ -1,10 +1,15 @@
 import React from "react";
 
-function Crypto({crypto}) {
+function Crypto({crypto, onTransact}) {
+
+
 
     function handleSubmit(e)
     {
         e.preventDefault()
+//check for valid entry
+        const usd = parseFloat(e.target.value.value);
+        onTransact(usd, crypto, e.nativeEvent.submitter.id === "buy");
     }
 
 
@@ -18,7 +23,7 @@ function Crypto({crypto}) {
           
           </p>
           <form onSubmit={handleSubmit}>
-            <input type="number" id="value" min="0" />
+            <input type="text" id="value" />
             <button type="submit" id="buy">Buy</button>
             <button type="submit" id="Sell">Sell</button>
 
