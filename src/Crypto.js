@@ -1,6 +1,13 @@
 import React from "react";
 
-function Stock({crypto}) {
+function Crypto({crypto}) {
+
+    function handleSubmit(e)
+    {
+        e.preventDefault()
+    }
+
+
   return (
     <div>
       <div className="card">
@@ -10,9 +17,15 @@ function Stock({crypto}) {
           ---------------{crypto.amount*crypto.price}
           
           </p>
+          <form onSubmit={handleSubmit}>
+            <input type="number" id="value" min="0" />
+            <button type="submit" id="buy">Buy</button>
+            <button type="submit" id="Sell">Sell</button>
+
+        </form>
         </div>
       </div>
     </div>
   );
 }
-export default Stock;
+export default Crypto;

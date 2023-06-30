@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Crypto from "./Crypto";
+import CryptoList from "./CryptoList";
 
 function Profile() {
     const [cash, setCash] = useState();
@@ -32,7 +33,10 @@ function Profile() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        const val = e.target.value.valueAsNumber;
+        console.log(parseFloat(e.target.value.value));
+        const val = parseFloat(e.target.value.value);//e.target.value.valueAsNumber;
+
+        console.log(val);
         const USD = { amount: 0 };
 
 
@@ -57,21 +61,17 @@ function Profile() {
 
     return <div>
         <h1>Profile Page</h1>
+        <h2>Balance: ${balance}</h2>
         <form onSubmit={handleSubmit}>
-            <h2>Balance: ${balance}</h2>
             <h3>Cash: $ {cash}</h3>
-            <input type="number" id="value" min="0" />
+            <input type="text" id="value" />
             <button type="submit" id="deposit">Deposit</button>
             <button type="submit" id="withdraw">Withdraw</button>
 
         </form>
 
-
-        <h2>Crypto</h2>
-        {
-            portfolio.map((c) => (
-                <Crypto key={c.id} crypto={c} />
-            ))}
+        <CryptoList portfolio={portfolio} />
+       
 
     </div>;
 }
