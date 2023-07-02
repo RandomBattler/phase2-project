@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from './logo.svg';
 import './App.css';
-import { Route } from 'react-router-dom/cjs/react-router-dom.min';
+import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 import NavBar from "./NavBar";
 import Home from './Home';
@@ -11,10 +11,10 @@ function App() {
  
 
   return (
-    <>
+    <div>
 
       <NavBar />
-      <div>
+      <Switch>
         <Route exact path="/">
           <Home />
         </Route>
@@ -24,8 +24,8 @@ function App() {
         <Route path="/profile">
           <Profile />
         </Route>
-      </div>
-    </>
+      </Switch>
+    </div>
   );
 }
 
