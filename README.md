@@ -6,3 +6,6 @@ from selected cryptocurrencies.
 
 The program uses GET and PATCH operations to display and update the user's assets.
 Transactions will update the portfolio accordingly
+
+The program uses the public API from CoinGecko to get the actual prices of 
+the cryptos. 

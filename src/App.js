@@ -8,15 +8,29 @@ import Home from './Home';
 import Profile from "./profile";
 
 function App() {
-  
+
   const [prices, setPrices] = useState(null);
+  function updatePrices() {
+    fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ccardano%2Clitecoin%2Csolana%2Cdogecoin&vs_currencies=usd")
+      .then((r) => r.json())
+      .then((c) => { setPrices(c);
+      console.log(c) });
+
+  }
 
   useEffect(() => {
-  fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ccardano%2Clitecoin%2Csolana%2Cdogecoin&vs_currencies=usd")
-            .then((r) => r.json())
-            .then((c) => {setPrices(c)});
-  },[]);
- 
+    updatePrices();
+  }, []);
+
+  useEffect(() => {
+
+    setInterval(() => {
+      updatePrices();
+    }, 60000);
+
+  }, []);
+
+
 
   return (
     <div>

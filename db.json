@@ -12,14 +12,14 @@
     },
     {
       "id": 1,
-      "name":"ethereum",
+      "name": "ethereum",
       "symbol": "ETH",
       "amount": 9.7875,
       "price": 2000
     },
     {
       "id": 2,
-      "name":"litecoin",
+      "name": "litecoin",
       "symbol": "LTC",
       "amount": 0,
       "price": 110
