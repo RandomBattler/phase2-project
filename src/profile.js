@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Crypto from "./Crypto";
 import CryptoList from "./CryptoList";
 
-function Profile() {
+function Profile({prices}) {
     const [cash, setCash] = useState();
     const [portfolio, setPortfolio] = useState([]);
 
@@ -63,6 +63,7 @@ function Profile() {
           });
           setPortfolio(updatedProtfolio);
     }
+    
 
     function onTransact(usd, crypto, buy){
         let newAmount = 0;
@@ -114,7 +115,7 @@ function Profile() {
 
         </form>
 
-        <CryptoList portfolio={portfolio} onTransact={onTransact} />
+        <CryptoList portfolio={portfolio} onTransact={onTransact} prices={prices} />
        
 
     </div>;

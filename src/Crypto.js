@@ -1,6 +1,6 @@
 import React from "react";
 
-function Crypto({crypto, onTransact}) {
+function Crypto({crypto, onTransact, prices}) {
 
 
 
@@ -18,7 +18,7 @@ function Crypto({crypto, onTransact}) {
       <div className="card">
         <div className="card-body">
           <h3 className="card-title">{crypto.name}</h3>
-          <p className="card-text">{crypto.amount}:......{crypto.price}   
+          <p className="card-text">{crypto.amount}:......{prices[crypto.name].usd}   
           ---------------{crypto.amount*crypto.price}
           
           </p>
