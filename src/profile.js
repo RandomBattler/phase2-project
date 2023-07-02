@@ -74,10 +74,10 @@ function Profile({prices}) {
                 return;
             }
             updatedCash.amount = cash - usd;
-            newAmount = crypto.amount + (usd/crypto.price);
+            newAmount = crypto.amount + (usd/prices[crypto.name].usd);
         }
         else {//sell
-            newAmount = crypto.amount - (usd/crypto.price);
+            newAmount = crypto.amount - (usd/prices[crypto.name].usd);
             if (newAmount < 0){
                 //error: not enough coin
                 return;
@@ -102,7 +102,7 @@ function Profile({prices}) {
 
     //update balance
     let balance = cash;
-    portfolio.forEach(c => balance += (c.amount * c.price));
+    portfolio.forEach(c => balance += (c.amount * prices[c.name].usd));
 
     return <div>
         <h1>Profile Page</h1>

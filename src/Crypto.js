@@ -19,7 +19,7 @@ function Crypto({crypto, onTransact, prices}) {
         <div className="card-body">
           <h3 className="card-title">{crypto.name}</h3>
           <p className="card-text">{crypto.amount}:......{prices[crypto.name].usd}   
-          ---------------{crypto.amount*crypto.price}
+          ---------------{crypto.amount*prices[crypto.name].usd}
           
           </p>
           <form onSubmit={handleSubmit}>
