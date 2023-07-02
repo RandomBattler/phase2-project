@@ -13,8 +13,7 @@ function App() {
   function updatePrices() {
     fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ccardano%2Clitecoin%2Csolana%2Cdogecoin&vs_currencies=usd")
       .then((r) => r.json())
-      .then((c) => { setPrices(c);
-      console.log(c) });
+      .then((c) => { setPrices(c); });
 
   }
 
@@ -26,7 +25,7 @@ function App() {
 
     setInterval(() => {
       updatePrices();
-    }, 60000);
+    }, 60000);//update the price every minute
 
   }, []);
 
@@ -39,9 +38,6 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
-        </Route>
-        <Route path="/about">
-          Hello from About
         </Route>
         <Route path="/profile">
           <Profile prices={prices} />

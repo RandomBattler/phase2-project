@@ -11,13 +11,9 @@ function NavBar() {
       <NavLink to="/">
         Home
       </NavLink></li>
-        <li key={1}>
-      <NavLink to="/about">
-        About
-      </NavLink></li>
         <li key={2}>
       <NavLink to="/profile">
-        Profile
+        Buy/Sell
       </NavLink></li>
       </ul>
     </div>
