@@ -17,7 +17,7 @@ function Crypto({crypto, onTransact}) {
     <div>
       <div className="card">
         <div className="card-body">
-          <h5 className="card-title">{crypto.name}</h5>
+          <h3 className="card-title">{crypto.name}</h3>
           <p className="card-text">{crypto.amount}:......{crypto.price}   
           ---------------{crypto.amount*crypto.price}
           

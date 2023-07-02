@@ -1,19 +1,28 @@
 {
   "cash": {
-    "amount": 7140.5599999999995
+    "amount": 0
   },
   "portfolio": [
     {
       "id": 0,
-      "name": "BTC",
+      "name": "Bitcoin",
+      "symbol": "BTC",
       "amount": 1.25,
       "price": 30000
     },
     {
       "id": 1,
-      "name": "ETH",
+      "name":"Ethereum",
+      "symbol": "ETH",
       "amount": 9.7875,
       "price": 2000
+    },
+    {
+      "id": 2,
+      "name":"Litecoin",
+      "symbol": "LTC",
+      "amount": 0,
+      "price": 110
     }
   ]
 }
