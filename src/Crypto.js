@@ -1,6 +1,6 @@
 import React from "react";
 
-function Crypto({crypto, onTransact, prices}) {
+function Crypto({crypto, onTransact, p}) {
 
 
 
@@ -12,14 +12,16 @@ function Crypto({crypto, onTransact, prices}) {
         onTransact(usd, crypto, e.nativeEvent.submitter.id === "buy");
     }
 
+    const price = (p)? p[crypto.name].usd : crypto.price;
+
 
   return (
     <div>
       <div className="card">
         <div className="card-body">
           <h3 className="card-title">{crypto.name}</h3>
-          <p className="card-text">{crypto.amount}:......{prices[crypto.name].usd}   
-          ---------------{crypto.amount*prices[crypto.name].usd}
+          <p className="card-text">{crypto.amount}:......{price}   
+          ---------------{crypto.amount*p[crypto.name].usd}
           
           </p>
           <form onSubmit={handleSubmit}>

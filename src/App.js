@@ -9,7 +9,7 @@ import Profile from "./profile";
 
 function App() {
   
-  const [prices, setPrices] = useState([]);
+  const [prices, setPrices] = useState(null);
 
   useEffect(() => {
   fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Ccardano%2Clitecoin%2Csolana%2Cdogecoin&vs_currencies=usd")

@@ -3,7 +3,7 @@ import Crypto from "./Crypto";
 import CryptoList from "./CryptoList";
 
 function Profile({prices}) {
-    const [cash, setCash] = useState();
+    const [cash, setCash] = useState(0);
     const [portfolio, setPortfolio] = useState([]);
 
 
@@ -101,8 +101,10 @@ function Profile({prices}) {
     }
 
     //update balance
+
     let balance = cash;
-    portfolio.forEach(c => balance += (c.amount * prices[c.name].usd));
+    if (prices)
+        portfolio.forEach(c => balance += (c.amount * prices[c.name].usd));
 
     return <div>
         <h1>Profile Page</h1>

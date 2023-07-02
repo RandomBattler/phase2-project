@@ -8,7 +8,7 @@ function CryptoList({portfolio, onTransact, prices}) {
             <h2>Crypto</h2>
             {
                 portfolio.map((c) => (
-                    <Crypto key={c.id} crypto={c} onTransact={onTransact} prices={prices} />
+                    <Crypto key={c.id} crypto={c} onTransact={onTransact} p={prices} />
                 ))}
         </div>
     );
