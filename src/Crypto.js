@@ -20,10 +20,10 @@ function Crypto({crypto, onTransact, prices}) {
       <div className="card">
         <div className="card-body">
           <h3 className="card-title">{crypto.name}</h3>
-          <p className="card-text">{crypto.amount}:......{price}   
+          <h3 className="card-text">{crypto.amount}:......{price}   
           ---------------{crypto.amount*price}
           
-          </p>
+          </h3>
           <form onSubmit={handleSubmit}>
             <input type="text" id="value" />
             <button type="submit" id="buy">Buy</button>

@@ -7,14 +7,14 @@
       "id": 0,
       "name": "bitcoin",
       "symbol": "BTC",
-      "amount": 1.25,
+      "amount": 0,
       "price": 30000
     },
     {
       "id": 1,
       "name": "ethereum",
       "symbol": "ETH",
-      "amount": 9.7875,
+      "amount": 0,
       "price": 2000
     },
     {

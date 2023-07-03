@@ -24,7 +24,8 @@ body {
   font-family: monospace;
   display: grid;
   grid-gap: 1em;
-  background-color:darkgrey
+  background-color:darkgrey;
+  margin-left: 50px;
 }
 
 .navbar {
@@ -48,3 +49,8 @@ button {
 #buy, #deposit {
   background-color: green;
 }
+
+#balance {
+  color: rgb(3, 53, 3);
+}
+

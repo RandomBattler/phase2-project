@@ -107,10 +107,9 @@ function Profile({prices}) {
         portfolio.forEach(c => balance += (c.amount * prices[c.name].usd));
 
     return <div>
-        <h1>Profile Page</h1>
-        <h2>Balance: ${balance}</h2>
+        <h1 id="balance">Balance: ${balance}</h1>
         <form onSubmit={handleSubmit}>
-            <h3>Cash: $ {cash}</h3>
+            <h2>Cash: $ {cash}</h2>
             <input type="text" id="value" />
             <button type="submit" id="deposit">Deposit</button>
             <button type="submit" id="withdraw">Withdraw</button>
