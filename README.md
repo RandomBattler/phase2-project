@@ -12,3 +12,5 @@ the cryptos listed.
 
 Cash can be added freely with the deposit button, but crypto can only be 
 bought with the cash in the account.
+
+video demo: https://youtu.be/q7IoBHCVCmQ
