@@ -54,8 +54,10 @@ button {
   color: rgb(3, 53, 3);
 }
 
-.chart {
-  justify-self: center;
-  width: auto;
-}
+.chart  {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  }
 
