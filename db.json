@@ -7,7 +7,7 @@
       "id": 0,
       "name": "bitcoin",
       "symbol": "BTC",
-      "amount": 0,
+      "amount": 0.003259239945244769,
       "price": 30000
     },
     {
@@ -23,6 +23,13 @@
       "symbol": "LTC",
       "amount": 0,
       "price": 110
+    },
+    {
+      "id": 3,
+      "name": "dogecoin",
+      "symbol": "DOGE",
+      "amount": 1469.702091386076,
+      "price": 0.06
     }
   ]
 }
