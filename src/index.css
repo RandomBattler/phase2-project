@@ -15,6 +15,14 @@ code {
 #siteName {
   text-align: center;
   font-size: 5em;
-  color: blue;
-  text-shadow: 0 0 15px #ff0000;
+  color: rgb(39, 39, 156);
+  text-shadow: 0 0 15px #505258;
+}
+
+body {
+  margin: 50;
+  font-family: monospace;
+  display: grid;
+  grid-gap: 1em;
+  background-color:darkgrey
 }
