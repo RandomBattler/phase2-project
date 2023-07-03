@@ -27,7 +27,7 @@ function Crypto({crypto, onTransact, prices}) {
           <form onSubmit={handleSubmit}>
             <input type="text" id="value" />
             <button type="submit" id="buy">Buy</button>
-            <button type="submit" id="Sell">Sell</button>
+            <button type="submit" id="sell">Sell</button>
 
         </form>
         </div>
